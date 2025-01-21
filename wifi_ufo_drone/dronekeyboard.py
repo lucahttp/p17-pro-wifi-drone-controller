@@ -22,7 +22,7 @@ if __name__ == "__main__":
     airborne = False  # flag denoting whether the drone is airborne
 
     speeds = [0.3, 0.6, 1]  # list of speeds to select from (0-1)
-    speed_idx = 0  # selected speed
+    speed_idx = 1  # selected speed
 
     r = 128  # roll
     p = 128  # pitch
@@ -61,12 +61,16 @@ if __name__ == "__main__":
                     print("speed: {0}".format(speeds[speed_idx]))
                 
                 elif key == 119:  # w
+                    print("w")
                     p += int(direction * 128 * speeds[speed_idx])  # pitch forward
                 elif key == 115:  # s
+                    print("s")
                     p -= int(direction * 128 * speeds[speed_idx])  # pitch backward
                 elif key == 97:  # a
+                    print("a")
                     r -= int(direction * 128 * speeds[speed_idx])  # roll left
                 elif key == 100:  # d
+                    print("d")
                     r += int(direction * 128 * speeds[speed_idx])  # roll righ
                 elif key == 273:  # up arrow
                     t += int(direction * 128 * speeds[speed_idx])  # throttle up
@@ -83,5 +87,6 @@ if __name__ == "__main__":
                 p = clamp(p, 0, 255)
                 t = clamp(t, 0, 255)
                 y = clamp(y, 0, 255)
+                print("r: {0}, p: {1}, t: {2}, y: {3}".format(r, p, t, y))
 
         drone.cmd(r, p, t, y)
