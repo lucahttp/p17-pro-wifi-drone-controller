@@ -1,5 +1,5 @@
-# WiFi UFO Drone
-This Python script allows remote control of some drone models via computer keyboard.
+# Drone P17 Pro WiFi Controller
+This Python script allows you to remote control some drone models (like the P17 Pro) via computer keyboard.
 
 
 ### overview
